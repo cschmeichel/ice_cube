@@ -52,7 +52,7 @@ describe IceCube::Schedule do
     schedule.add_exception_time(start_time + 1 * IceCube::ONE_DAY) # all days except tomorrow
     # check assumption
     dates = schedule.occurrences(start_time + 13 * IceCube::ONE_DAY) # 2 weeks
-    dates.size.should == 13 # 2 weeks minus 1 day
+    dates.size.should == 12 # 2 weeks minus 2 days
     dates.should_not include(start_time + 1 * IceCube::ONE_DAY)
   end
 
